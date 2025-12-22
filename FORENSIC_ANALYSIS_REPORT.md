@@ -154,11 +154,13 @@ The files in the Immortality folder were packaged into a password-protected ZIP 
 
 #### 3.4.3 Communication Obfuscation
 Charlie used multiple external email addresses to conduct illicit communications:
-- jaime@project2400.com (competitor contact)
-- jamie@project2400.com (alternate spelling)
+- jaime@project2400.com (competitor contact - initial misspelling, caused bounce-back)
+- jamie@project2400.com (competitor contact - corrected spelling used in subsequent emails)
 - andy@swexpert.com (extortion victim)
 - alix.pery@yahoo.com (personal - vacation plans)
 - rubinfritz31@mail.com (personal - car purchase)
+
+**Note**: The misspelling of jaime@project2400.com vs jamie@project2400.com is forensically significant. The initial email to jaime@ bounced back (Dec 2, 2009 13:05), which preserved the incriminating evidence. Charlie subsequently corrected the spelling to jamie@ in later communications.
 
 ---
 
