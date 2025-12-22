@@ -1,0 +1,694 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DIGITAL FORENSICS INVESTIGATION REPORT - LaTeX Template
+% Case Reference: DF-231309 | M57.biz Insider Threat Investigation
+% 
+% Simply paste this LaTeX code into Overleaf or compile with pdflatex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+% Page geometry
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3cm
+}
+
+% Colors
+\definecolor{headerblue}{RGB}{0, 51, 102}
+\definecolor{lightgray}{RGB}{240, 240, 240}
+\definecolor{evidencered}{RGB}{180, 0, 0}
+\definecolor{criticalred}{RGB}{200, 0, 0}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{headerblue}{Digital Forensics Investigation Report}}
+\fancyhead[R]{\small\textcolor{headerblue}{Case Reference: DF-231309}}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\small\textcolor{gray}{Confidential - Legal Privilege Applies}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% Section formatting
+\titleformat{\section}{\Large\bfseries\color{headerblue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{headerblue}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{headerblue}}{\thesubsubsection}{1em}{}
+
+% Custom environments
+\newtcolorbox{evidencebox}{
+    colback=lightgray,
+    colframe=headerblue,
+    boxrule=1pt,
+    arc=3pt,
+    title=Evidence Item
+}
+
+\newtcolorbox{criticalbox}{
+    colback=red!5,
+    colframe=criticalred,
+    boxrule=1pt,
+    arc=3pt,
+    title=\textbf{CRITICAL EVIDENCE}
+}
+
+\newtcolorbox{quotebox}{
+    colback=gray!10,
+    colframe=gray!50,
+    boxrule=0.5pt,
+    arc=2pt,
+    left=10pt,
+    right=10pt
+}
+
+% Listings for code/verbatim
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{lightgray}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT BEGIN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge\bfseries\textcolor{headerblue}{DIGITAL FORENSICS\\INVESTIGATION REPORT}\par}
+    
+    \vspace{1.5cm}
+    
+    {\Large Case Reference: DF-231309\par}
+    {\Large M57.biz Insider Threat Investigation\par}
+    
+    \vspace{2cm}
+    
+    \begin{tabular}{|p{4cm}|p{6cm}|}
+        \hline
+        \rowcolor{headerblue}
+        \textcolor{white}{\textbf{Role}} & \textcolor{white}{\textbf{Name}} \\
+        \hline
+        \textbf{Investigator} & Rana Uzair \\
+        \hline
+    \end{tabular}
+    
+    \vspace{2cm}
+    
+    {\large\textbf{Report Date:} December 22, 2025\par}
+    
+    \vspace{1cm}
+    
+    \begin{tcolorbox}[colback=red!10, colframe=red!50!black, width=0.8\textwidth]
+        \centering
+        \textbf{CLASSIFICATION: Confidential -- Legal Privilege Applies}
+    \end{tcolorbox}
+    
+    \vfill
+    
+    {\small This document contains sensitive forensic evidence and is intended solely for authorized personnel involved in the investigation.\par}
+    
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLE OF CONTENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EXECUTIVE SUMMARY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Executive Summary}
+
+This comprehensive digital forensics investigation was conducted on a forensic image file (evidence.E01) belonging to an employee workstation at M57.biz, a prior art patent research firm. The investigation period spans \textbf{November 16, 2009 through December 11, 2009}.
+
+\subsection{Key Findings}
+
+The forensic analysis has uncovered \textbf{conclusive evidence} of criminal activity by an employee identified as ``Charlie'' (charlie@m57.biz), including:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Criminal Activity}} & \textcolor{white}{\textbf{Evidence Level}} & \textcolor{white}{\textbf{Impact Assessment}} \\
+    \hline
+    \textbf{Corporate Espionage} & Confirmed & High - Proprietary patent research exfiltrated \\
+    \hline
+    \textbf{Extortion/Blackmail} & Confirmed & High - \$100,000 demanded from external party \\
+    \hline
+    \textbf{Trade Secret Theft} & Confirmed & High - Confidential client data offered to competitor \\
+    \hline
+    \textbf{Anti-Forensic Techniques} & Confirmed & Medium - Encryption, steganography, deletion instructions \\
+    \hline
+\end{tabular}
+\caption{Summary of Criminal Activities}
+\end{table}
+
+\subsection{Summary of Criminal Activity}
+
+\begin{enumerate}
+    \item \textbf{Extortion Scheme}: Charlie demanded \$100,000 from andy@swexpert.com threatening to publicly disclose patent invalidation evidence
+    \item \textbf{Trade Secret Offer}: Charlie attempted to sell confidential prior art research to competitor jamie@project2400.com
+    \item \textbf{Data Exfiltration}: Immortality project files (patent documents) were packaged into a password-protected ZIP file and sent to external parties
+    \item \textbf{Anti-Forensic Measures}: Employment of password-protected encryption (password: ``nitro''), steganography (hidden data in microscope1.jpg), and explicit instructions to recipients to delete incriminating communications
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CASE OVERVIEW
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Case Overview}
+
+\subsection{Background Information}
+
+\begin{itemize}
+    \item \textbf{Organization:} M57.biz
+    \item \textbf{Industry:} Prior Art Patent Research Services
+    \item \textbf{Location:} United States
+\end{itemize}
+
+\subsubsection{Organizational Structure}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Employee}} & \textcolor{white}{\textbf{Role}} & \textcolor{white}{\textbf{Email Address}} & \textcolor{white}{\textbf{Status}} \\
+    \hline
+    Pat McGoo & CEO/Founder & pat@m57.biz & Victim/Employer \\
+    \hline
+    Charlie & Patent Researcher & charlie@m57.biz & \textcolor{red}{\textbf{PRIMARY SUSPECT}} \\
+    \hline
+    Jo Smith & Patent Researcher & jo@m57.biz & Witness \\
+    \hline
+    Terry Johnson & IT Administrator & terry@m57.biz & Witness \\
+    \hline
+\end{tabular}
+\caption{M57.biz Employee Structure}
+\end{table}
+
+\subsection{Investigation Objectives}
+
+\begin{enumerate}
+    \item Identify any unauthorized access, data exfiltration, or misuse of company resources
+    \item Document the timeline of suspicious activities
+    \item Preserve digital evidence for potential legal proceedings
+    \item Assess the scope and impact of any data breach
+    \item Provide recommendations for preventing future incidents
+\end{enumerate}
+
+\subsection{Investigation Scope}
+
+\begin{itemize}
+    \item \textbf{Timeframe:} November 16, 2009 -- December 11, 2009
+    \item \textbf{Evidence Source:} Forensic image (evidence.E01) of employee workstation
+    \item \textbf{File System:} NTFS (vol\_vol2)
+\end{itemize}
+
+\subsection{Legal Framework}
+
+This investigation was conducted in accordance with standard digital forensics procedures. The analysis was performed on a forensically acquired image to maintain evidence integrity.
+
+\textbf{Applicable Laws and Regulations:}
+\begin{itemize}
+    \item 18 U.S.C. § 1832 - Theft of Trade Secrets
+    \item 18 U.S.C. § 873 - Blackmail
+    \item 18 U.S.C. § 1030 - Computer Fraud and Abuse Act
+    \item State trade secret and computer crime statutes
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 01.ZIP FILE CONTENT - KEY EVIDENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{01.zip File Content -- Key Evidence}
+
+\begin{criticalbox}
+The 01.zip file (Charlie\_2009-12-04\_0941\_Sent\_01.zip) is a critical piece of evidence containing exfiltrated proprietary patent documents. This password-protected archive was sent as an attachment with the extortion email.
+\end{criticalbox}
+
+\subsection{Archive Details}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Property}} & \textcolor{white}{\textbf{Value}} \\
+    \hline
+    \textbf{File Name} & Charlie\_2009-12-04\_0941\_Sent\_01.zip \\
+    \hline
+    \textbf{File Type} & Zip archive data, at least v1.0 to extract \\
+    \hline
+    \textbf{Compression Method} & Store \\
+    \hline
+    \textbf{Total Size (Uncompressed)} & 123,968 bytes \\
+    \hline
+    \textbf{Password Protection} & Yes \\
+    \hline
+    \textbf{Password} & ``nitro'' (primary), ``immortal'' (alternate) \\
+    \hline
+    \textbf{MD5 Hash} & 4fa239c22e5fb7b934a1bf68e4e0e2e7 \\
+    \hline
+    \textbf{SHA1 Hash} & cd73525ab73c19d01d9de0ea18bf9a6f932cef3e \\
+    \hline
+\end{tabular}
+\caption{01.zip Archive Properties}
+\end{table}
+
+\subsection{Archive Contents}
+
+\begin{lstlisting}[caption={01.zip File Contents}]
+Archive:  Charlie_2009-12-04_0941_Sent_01.zip
+  Length      Date       Time    Name
+---------  ----------   -----   ----
+        0  2009-11-24   13:18   Immortality/
+     7680  2009-11-24   13:18   Immortality/Thumbs.db
+    39692  2009-11-24   13:13   Immortality/us005026637-001.tif
+    76596  2009-11-24   13:15   Immortality/us006982168-001.tif
+---------                       -------
+   123968                       4 files
+\end{lstlisting}
+
+\subsection{Individual File Details}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{4cm}|p{2cm}|p{4cm}|p{4cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{File Name}} & \textcolor{white}{\textbf{Size}} & \textcolor{white}{\textbf{MD5 Hash}} & \textcolor{white}{\textbf{Last Modified}} \\
+    \hline
+    Immortality/ (folder) & 0 bytes & N/A & Nov 24, 2009 13:18 \\
+    \hline
+    Immortality/Thumbs.db & 7,680 bytes & 4db32968b696e7b7dca8e3860e52b6c3 & Nov 24, 2009 13:18 \\
+    \hline
+    Immortality/us005026637-001.tif & 39,692 bytes & b526e6c7a244d62e7120f3f804d76d8d & Nov 24, 2009 13:13 \\
+    \hline
+    Immortality/us006982168-001.tif & 76,596 bytes & c412dfcd8bca1333d9356d710dd7a01a & Nov 24, 2009 13:15 \\
+    \hline
+\end{tabular}
+\caption{01.zip Individual File Details}
+\end{table}
+
+\subsection{Evidence Significance}
+
+\subsubsection{Immortality Folder}
+The folder name ``Immortality'' directly corresponds to the patent project mentioned in Charlie's extortion email to andy@swexpert.com, where he states: \textit{``I found a prior patent that will definitely invalidate your current immortality patent.''}
+
+\subsubsection{Thumbs.db File}
+\begin{itemize}
+    \item \textbf{Type:} Windows Thumbnail Cache (Composite Document File V2)
+    \item \textbf{Significance:} Proves that the TIF files were viewed/accessed on a Windows system
+    \item \textbf{Contains:} Cached thumbnails of us005026637-001.tif and us006982168-001.tif
+    \item \textbf{Forensic Value:} Demonstrates deliberate file access and viewing activity
+\end{itemize}
+
+\subsubsection{Patent Documents (TIF Files)}
+\begin{itemize}
+    \item \textbf{us005026637-001.tif} -- US Patent document (prior art evidence)
+    \item \textbf{us006982168-001.tif} -- US Patent document (prior art evidence)
+    \item \textbf{Significance:} These are the proprietary patent research documents that Charlie exfiltrated from M57.biz and used for extortion purposes
+\end{itemize}
+
+\subsection{Password Recovery}
+
+The password for the ZIP archive was recovered from email evidence:
+
+\begin{quotebox}
+\textbf{From:} Charlie\_2009-12-04\_1306\_Sent.txt \\
+\textit{``Got the deposit. The password to get the info is \textbf{nitro}. Use the steg program we talked about. And don't forget to delete these emails.''}
+\end{quotebox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FINDINGS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Findings}
+
+\subsection{Extortion Email Evidence}
+
+\begin{criticalbox}
+\textbf{Evidence File:} Charlie\_2009-12-04\_0941\_Sent.txt \\
+\textbf{Date:} Friday, December 4, 2009 09:41:47 -0800 \\
+\textbf{From:} Charlie $<$charlie@m57.biz$>$ \\
+\textbf{To:} andy@swexpert.com \\
+\textbf{Subject:} I Found Something
+\end{criticalbox}
+
+\begin{quotebox}
+``Andy,
+
+Lucky for me, I just happened to stumble across this. I found a prior patent that will definitely invalidate your current immortality patent. You should have used my boss's prior art services, but, oh well, I'll just use your negligence to benefit me. \textbf{I want 100k or I'll release this publicly.} I don't need to tell you how much this will hurt your business if I go public with this. \textbf{Don't involve the cops} or this information will go public. See the attachment for details on what I found. I'll be in touch with my bank acct number. The password for the zip file will be hidden in the next picture I send you.
+
+C''
+\end{quotebox}
+
+\subsection{Trade Secret Theft Evidence}
+
+\begin{evidencebox}
+\textbf{Evidence File:} Charlie\_2009-12-02\_1305\_Received.txt (Bounce-back containing original) \\
+\textbf{Date:} Wednesday, December 2, 2009 13:04:29 -0800 \\
+\textbf{From:} Charlie $<$charlie@m57.biz$>$ \\
+\textbf{To:} jaime@project2400.com (misspelled, caused bounce-back)
+\end{evidencebox}
+
+\begin{quotebox}
+``J,
+
+I have something that you'll definitely be interested in. It concerns your competitor. I'm doing a prior art search for them. Want to know what I've found? \textbf{You know my price.} I'll send you the goods after I see half in my account. \textbf{Make sure you delete this email.}
+
+C''
+\end{quotebox}
+
+\subsection{Password and Steganography Instructions}
+
+\begin{evidencebox}
+\textbf{Evidence File:} Charlie\_2009-12-04\_1306\_Sent.txt \\
+\textbf{Date:} Friday, December 4, 2009 13:06:23 -0800
+\end{evidencebox}
+
+\begin{quotebox}
+``J,
+
+Got the deposit. \textbf{The password to get the info is nitro.} Use the steg program we talked about. \textbf{And don't forget to delete these emails.}
+
+C''
+\end{quotebox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TIMELINE ANALYSIS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Timeline Analysis}
+
+\subsection{Critical Incident Window (December 2-7, 2009)}
+
+\begin{longtable}{|p{3cm}|p{6cm}|p{5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Date/Time}} & \textcolor{white}{\textbf{Event}} & \textcolor{white}{\textbf{Evidence Source}} \\
+    \hline
+    \endhead
+    
+    Nov 24, 2009 13:13 & us005026637-001.tif last modified & File system metadata \\
+    \hline
+    Nov 24, 2009 13:15 & us006982168-001.tif last modified & File system metadata \\
+    \hline
+    Nov 24, 2009 13:18 & Thumbs.db created (folder accessed) & File system metadata \\
+    \hline
+    \rowcolor{red!10}
+    Dec 2, 2009 13:04 & \textbf{CRITICAL:} Trade secret offer to competitor & Charlie\_2009-12-02\_1304\_Sent.txt \\
+    \hline
+    Dec 2, 2009 13:05 & Email bounces -- Evidence preserved & Charlie\_2009-12-02\_1305\_Received.txt \\
+    \hline
+    Dec 2, 2009 13:25 & Second contact attempt to competitor & Charlie\_2009-12-02\_1325\_Sent.txt \\
+    \hline
+    Dec 3, 2009 12:16 & File sent to competitor (jamie@project2400.com) & Charlie\_2009-12-03\_1216\_Sent.txt \\
+    \hline
+    \rowcolor{red!10}
+    Dec 4, 2009 09:41 & \textbf{CRITICAL:} Extortion email with encrypted ZIP & Charlie\_2009-12-04\_0941\_Sent.txt \\
+    \hline
+    \rowcolor{red!10}
+    Dec 4, 2009 13:06 & \textbf{CRITICAL:} Password ``nitro'' sent & Charlie\_2009-12-04\_1306\_Sent.txt \\
+    \hline
+    Dec 7, 2009 11:44 & Steganography image sent & other/Picture.eml.txt \\
+    \hline
+    Dec 8, 2009 12:59 & 2-week vacation request & other/Vacation time.txt \\
+    \hline
+    Dec 8, 2009 14:18 & Ferrari/Shelby test drive discussion & other/Hey.txt \\
+    \hline
+
+\caption{Timeline of Criminal Activity}
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EVIDENCE ACQUISITION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Evidence Acquisition}
+
+\subsection{Digital Evidence Inventory}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Evidence ID}} & \textcolor{white}{\textbf{File}} & \textcolor{white}{\textbf{Type}} & \textcolor{white}{\textbf{Description}} \\
+    \hline
+    E001 & Charlie\_2009-12-04\_0941\_Sent.txt & Email & Extortion communication \\
+    \hline
+    E002 & Charlie\_2009-12-04\_0941\_Sent\_01.zip & Archive & Password-protected exfiltration \\
+    \hline
+    E003 & Charlie\_2009-12-02\_1305\_Received.txt & Email & Bounce-back preservation \\
+    \hline
+    E004 & Charlie\_2009-12-04\_1306\_Sent.txt & Email & Password instructions \\
+    \hline
+    E005 & microscope1.jpg & Image & Steganography carrier \\
+    \hline
+    E006 & Immortality/us005026637-001.tif & Document & Exfiltrated patent \\
+    \hline
+    E007 & Immortality/us006982168-001.tif & Document & Exfiltrated patent \\
+    \hline
+    E008 & Immortality/Thumbs.db & System & Windows artifact \\
+    \hline
+\end{tabular}
+\caption{Digital Evidence Inventory}
+\end{table}
+
+\subsection{Hash Verification}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{5cm}|p{4.5cm}|p{5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Evidence Item}} & \textcolor{white}{\textbf{MD5 Hash}} & \textcolor{white}{\textbf{SHA1 Hash}} \\
+    \hline
+    01.zip (Charlie\_...\_01.zip) & 4fa239c22e5fb7b934a1bf68e4e0e2e7 & cd73525ab73c19d01d9de0ea18bf9a6f932cef3e \\
+    \hline
+    us005026637-001.tif & b526e6c7a244d62e7120f3f804d76d8d & 386ff415604c2a3aea768d8ed33ed5c9d74cf67d \\
+    \hline
+    us006982168-001.tif & c412dfcd8bca1333d9356d710dd7a01a & da19bd1061dd6dc0e96c1a28e16e6378e1332b3f \\
+    \hline
+    Thumbs.db & 4db32968b696e7b7dca8e3860e52b6c3 & 380b219eccbab59e89233e0ae3c30e142ebe429a \\
+    \hline
+\end{tabular}
+\caption{Evidence Hash Verification}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANTI-FORENSICS DETECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Anti-Forensics Detection}
+
+\subsection{Encryption Evidence}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Indicator}} & \textcolor{white}{\textbf{Location}} & \textcolor{white}{\textbf{Details}} \\
+    \hline
+    Password-protected ZIP & 01.zip & Password: ``nitro'' \\
+    \hline
+    Steganography & microscope1.jpg & Hidden data mentioned in emails \\
+    \hline
+    Reference to ``steg program'' & Charlie\_2009-12-04\_1306\_Sent.txt & Explicit anti-forensics tool \\
+    \hline
+\end{tabular}
+\caption{Anti-Forensics Indicators}
+\end{table}
+
+\subsection{Evidence Destruction Instructions}
+
+Multiple instances of Charlie instructing recipients to delete incriminating communications:
+
+\begin{enumerate}
+    \item Dec 2, 2009: \textit{``Make sure you delete this email.''}
+    \item Dec 4, 2009: \textit{``Don't involve the cops or this information will go public.''}
+    \item Dec 4, 2009: \textit{``And don't forget to delete these emails.''}
+    \item Dec 7, 2009: \textit{``Make sure you delete this.''}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONCLUSION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+\subsection{Summary of Findings}
+
+Based on comprehensive forensic analysis, this investigation has established the following findings:
+
+\begin{enumerate}
+    \item \textbf{Corporate Espionage Confirmed:} Charlie systematically exfiltrated proprietary Immortality project files containing patent research
+    
+    \item \textbf{Extortion/Blackmail Confirmed:} Charlie demanded \$100,000 from andy@swexpert.com under threat of public disclosure
+    
+    \item \textbf{Trade Secret Misappropriation Confirmed:} Charlie offered confidential prior art research to competitor jamie@project2400.com
+    
+    \item \textbf{Anti-Forensic Activities Confirmed:} Employment of encryption, steganography, and explicit instructions to destroy evidence
+\end{enumerate}
+
+\subsection{Evidence Strength Assessment}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Finding}} & \textcolor{white}{\textbf{Strength}} & \textcolor{white}{\textbf{Corroborating Evidence}} \\
+    \hline
+    Data Exfiltration & \textbf{CONCLUSIVE} & ZIP file contents match Immortality folder \\
+    \hline
+    Extortion & \textbf{CONCLUSIVE} & Multiple emails with explicit demands \\
+    \hline
+    Trade Secret Theft & \textbf{CONCLUSIVE} & Email communications with competitor \\
+    \hline
+    Anti-Forensics & \textbf{STRONG} & Encryption, steganography, deletion requests \\
+    \hline
+    Financial Motive & \textbf{STRONG} & Vacation/car purchase communications \\
+    \hline
+\end{tabular}
+\caption{Evidence Strength Assessment}
+\end{table}
+
+\subsection{Criminal Implications}
+
+Charlie's actions potentially violate:
+\begin{itemize}
+    \item \textbf{18 U.S.C. § 1832} -- Theft of Trade Secrets
+    \item \textbf{18 U.S.C. § 873} -- Blackmail
+    \item \textbf{18 U.S.C. § 1030} -- Computer Fraud and Abuse Act
+    \item Various state trade secret and computer crime statutes
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RECOMMENDATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Recommendations}
+
+\subsection{Immediate Actions Required}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Priority}} & \textcolor{white}{\textbf{Action}} & \textcolor{white}{\textbf{Responsible}} & \textcolor{white}{\textbf{Timeline}} \\
+    \hline
+    \textcolor{red}{\textbf{Critical}} & Terminate Charlie's employment & HR/Legal & Immediate \\
+    \hline
+    \textcolor{red}{\textbf{Critical}} & Disable all network access & IT Admin & Immediate \\
+    \hline
+    \textcolor{red}{\textbf{Critical}} & Preserve all evidence & Investigator & Complete \\
+    \hline
+    High & Notify legal counsel & Management & Within 24 hours \\
+    \hline
+    High & Contact law enforcement & Legal & Within 48 hours \\
+    \hline
+\end{tabular}
+\caption{Recommended Actions}
+\end{table}
+
+\subsection{Security Improvements}
+
+\begin{enumerate}
+    \item \textbf{Data Loss Prevention (DLP):} Implement DLP solutions to detect sensitive data transfers
+    \item \textbf{Email Monitoring:} Deploy content inspection for external email communications
+    \item \textbf{Access Controls:} Implement least-privilege access to confidential project files
+    \item \textbf{Employee Training:} Conduct regular security awareness training
+    \item \textbf{Encryption Controls:} Prohibit unauthorized encryption of company data
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SIGNATURE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Certification and Signature}
+
+\begin{tcolorbox}[colback=blue!5, colframe=headerblue]
+\textbf{Investigator Certification}
+
+I, \textbf{Rana Uzair}, certify that:
+
+\begin{enumerate}
+    \item The analysis documented in this report was conducted using accepted forensic methodology
+    \item All evidence was handled in accordance with chain of custody requirements
+    \item The findings represent an accurate interpretation of the evidence examined
+    \item No evidence was altered, modified, or destroyed during the analysis
+\end{enumerate}
+
+\vspace{1cm}
+
+\begin{tabular}{p{6cm}p{6cm}}
+    \textbf{Investigator:} Rana Uzair & \textbf{Date:} December 22, 2025 \\
+    & \\
+    \rule{5cm}{0.4pt} & \rule{5cm}{0.4pt} \\
+    Signature & Date \\
+\end{tabular}
+
+\end{tcolorbox}
+
+\vspace{1cm}
+
+\begin{center}
+\textbf{Case Number:} DF-231309 \\
+\textbf{Classification:} Confidential -- Legal Privilege Applies
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\textit{This report is based solely on the digital artifacts provided for analysis. Additional investigation may reveal further evidence. All findings should be independently verified before use in legal proceedings.}
+\end{center}
+
+\vspace{1cm}
+
+\begin{center}
+\rule{10cm}{0.5pt} \\
+\textbf{END OF REPORT}
+\end{center}
+
+\end{document}
