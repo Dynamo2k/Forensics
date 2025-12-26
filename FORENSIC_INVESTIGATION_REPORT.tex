@@ -684,6 +684,813 @@ I, \textbf{Rana Uzair}, certify that:
 \textit{This report is based solely on the digital artifacts provided for analysis. Additional investigation may reveal further evidence. All findings should be independently verified before use in legal proceedings.}
 \end{center}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Annexures}
+
+The following annexures provide supplementary documentation, evidence, and technical details supporting the findings of this investigation report.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE A - TOOL SCREENSHOTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure A: Forensic Tool Screenshots}
+
+This annexure contains screenshots from forensic tools used during the investigation process.
+
+\subsubsection{A.1 Autopsy Digital Forensics Platform}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Tool Screenshots Required}]
+\textbf{Instructions:} Add screenshots from Autopsy 4.21.0 showing:
+\begin{enumerate}
+    \item Case creation and data source configuration
+    \item File system tree view showing evidence structure
+    \item Ingest module results
+    \item Keyword search results for suspicious terms
+\end{enumerate}
+\end{tcolorbox}
+
+% TODO: Add Autopsy main interface screenshot
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{autopsy_main.png}
+%     \caption{Autopsy Main Interface - Case DF-231309}
+% \end{figure}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Autopsy Case View}]
+\textbf{Add Screenshot:} Autopsy main case view showing the evidence.E01 forensic image loaded with file tree expanded.
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Ingest Module Results}]
+\textbf{Add Screenshot:} Autopsy ingest module results showing:
+\begin{itemize}
+    \item Email Parser results
+    \item Encryption Detection results
+    \item Keyword Search hits for terms: ``extortion'', ``100k'', ``nitro'', ``delete''
+    \item Interesting Files identification
+\end{itemize}
+\end{tcolorbox}
+
+\subsubsection{A.2 Email Analysis View}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Email Evidence Screenshots}]
+\textbf{Add Screenshots:} 
+\begin{enumerate}
+    \item Email viewer showing extortion email (Charlie\_2009-12-04\_0941\_Sent.txt)
+    \item Email viewer showing trade secret offer email
+    \item Email headers analysis view
+\end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{A.3 Timeline Analysis View}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Timeline View}]
+\textbf{Add Screenshot:} Autopsy Timeline view showing activity during the critical incident window (December 2-7, 2009).
+\end{tcolorbox}
+
+\subsubsection{A.4 File Export and Hash Verification}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Export Process}]
+\textbf{Add Screenshots:}
+\begin{enumerate}
+    \item Export dialog showing file selection
+    \item Hash verification results from Autopsy
+    \item Exported files directory structure
+\end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{A.5 ZIP Archive Analysis}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Archive Analysis}]
+\textbf{Add Screenshots:}
+\begin{enumerate}
+    \item Password-protected ZIP file detection
+    \item ZIP file contents after decryption (using password ``nitro'')
+    \item Command line output showing archive extraction:
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{lstlisting}[caption={ZIP Archive Extraction Command Output}]
+$ unzip -P nitro Charlie_2009-12-04_0941_Sent_01.zip
+Archive:  Charlie_2009-12-04_0941_Sent_01.zip
+   creating: Immortality/
+  inflating: Immortality/Thumbs.db
+  inflating: Immortality/us005026637-001.tif
+  inflating: Immortality/us006982168-001.tif
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE B - COMPLETE EVIDENCE FILE LISTING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure B: Complete Evidence File Listing}
+
+\subsubsection{B.1 Email Communications (Chronological Order)}
+
+\begin{longtable}{|p{1cm}|p{3cm}|p{5.5cm}|p{4cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{ID}} & \textcolor{white}{\textbf{Date/Time}} & \textcolor{white}{\textbf{File Name}} & \textcolor{white}{\textbf{Subject/Description}} \\
+    \hline
+    \endhead
+    
+    1 & Nov 16, 2009 11:02 & Charlie\_2009-11-16\_1102\_Received.txt & Welcome to the Company \\
+    \hline
+    2 & Nov 16, 2009 11:22 & Charlie\_2009-11-16\_1122\_Received.txt & Lunch \\
+    \hline
+    3 & Nov 16, 2009 11:51 & Charlie\_2009-11-16\_1151\_Sent.txt & Re: Welcome \\
+    \hline
+    4 & Nov 16, 2009 13:26 & Charlie\_2009-11-16\_1326\_Sent.txt & -- \\
+    \hline
+    5 & Nov 16, 2009 13:38 & Charlie\_2009-11-16\_1338\_Received.txt & -- \\
+    \hline
+    6 & Nov 16, 2009 14:33 & Charlie\_2009-11-16\_1433\_Received.txt & -- \\
+    \hline
+    7 & Nov 16, 2009 15:53 & Charlie\_2009-11-16\_1553\_Received.txt & -- \\
+    \hline
+    8 & Nov 16, 2009 15:59 & Charlie\_2009-11-16\_1559\_Sent.txt & -- \\
+    \hline
+    9 & Nov 17, 2009 08:45 & Charlie\_2009-11-17\_0845\_Received.txt & -- \\
+    \hline
+    10 & Nov 17, 2009 10:30 & Charlie\_2009-11-17\_1030\_Received.txt & M57.BIZ Prior Art \\
+    \hline
+    11 & Nov 17, 2009 10:33 & Charlie\_2009-11-17\_1033\_Received.txt & -- \\
+    \hline
+    12 & Nov 17, 2009 10:39 & Charlie\_2009-11-17\_1039\_Received.txt & Inventions / Patents \\
+    \hline
+    13 & Nov 17, 2009 10:40 & Charlie\_2009-11-17\_1040\_Received.txt & -- \\
+    \hline
+    14 & Nov 17, 2009 10:54 & Charlie\_2009-11-17\_1054\_Sent.txt & -- \\
+    \hline
+    15 & Nov 18, 2009 09:03 & Charlie\_2009-11-18\_0903\_Received.txt & -- \\
+    \hline
+    16 & Nov 18, 2009 09:27 & Charlie\_2009-11-18\_0927\_Received.txt & -- \\
+    \hline
+    17 & Nov 18, 2009 09:29 & Charlie\_2009-11-18\_0929\_Received.txt & -- \\
+    \hline
+    18 & Nov 18, 2009 09:39 & Charlie\_2009-11-18\_0939\_Received.txt & -- \\
+    \hline
+    19 & Nov 18, 2009 09:40 & Charlie\_2009-11-18\_0940\_Received.txt & -- \\
+    \hline
+    20 & Nov 18, 2009 10:01 & Charlie\_2009-11-18\_1001\_Received.txt & -- \\
+    \hline
+    21 & Nov 18, 2009 10:04 & Charlie\_2009-11-18\_1004a\_Received.txt & -- \\
+    \hline
+    22 & Nov 18, 2009 10:04 & Charlie\_2009-11-18\_1004b\_Received.txt & -- \\
+    \hline
+    23 & Nov 18, 2009 11:58 & Charlie\_2009-11-18\_1158\_Sent.txt & -- \\
+    \hline
+    24 & Nov 18, 2009 12:53 & Charlie\_2009-11-18\_1253\_Sent.txt & -- \\
+    \hline
+    25 & Nov 18, 2009 12:59 & Charlie\_2009-11-18\_1259\_Sent.txt & -- \\
+    \hline
+    26 & Nov 19, 2009 09:32 & Charlie\_2009-11-19\_0932\_Received.txt & -- \\
+    \hline
+    27 & Nov 19, 2009 09:42 & Charlie\_2009-11-19\_0942\_Received.txt & -- \\
+    \hline
+    28 & Nov 19, 2009 09:57 & Charlie\_2009-11-19\_0957\_Received.txt & -- \\
+    \hline
+    29 & Nov 19, 2009 10:37 & Charlie\_2009-11-19\_1037\_Sent.txt & -- \\
+    \hline
+    30 & Nov 19, 2009 10:38 & Charlie\_2009-11-19\_1038\_Sent.txt & -- \\
+    \hline
+    31 & Nov 19, 2009 11:57 & Charlie\_2009-11-19\_1157\_Received.txt & -- \\
+    \hline
+    32 & Nov 20, 2009 08:48 & Charlie\_2009-11-20\_0848\_Received.txt & -- \\
+    \hline
+    33 & Nov 20, 2009 09:57 & Charlie\_2009-11-20\_0957\_Received.txt & PDF Attachments \\
+    \hline
+    34 & Nov 20, 2009 10:55 & Charlie\_2009-11-20\_1055\_Received.txt & PETEFFS.pdf \\
+    \hline
+    35 & Nov 20, 2009 13:03 & 107-Charlie\_2009-11-20\_1303\_Sent.txt & -- \\
+    \hline
+    36 & Nov 30, 2009 08:46 & Charlie\_2009-11-30\_0846\_Sent.txt & -- \\
+    \hline
+    37 & Nov 30, 2009 08:54 & Charlie\_2009-11-30\_0854\_Received.txt & US5041044.pdf \\
+    \hline
+    38 & Nov 30, 2009 09:07 & Charlie\_2009-11-30\_0907\_Received.txt & -- \\
+    \hline
+    39 & Nov 30, 2009 09:49 & Charlie\_2009-11-30\_0949\_Received.txt & -- \\
+    \hline
+    40 & Nov 30, 2009 11:08 & Charlie\_2009-11-30\_1108\_Received.txt & -- \\
+    \hline
+    41 & Dec 01, 2009 10:46 & Charlie\_2009-12-01\_1046\_Received.txt & -- \\
+    \hline
+    42 & Dec 01, 2009 11:52 & Charlie\_2009-12-01\_1152\_Received.txt & -- \\
+    \hline
+    43 & Dec 01, 2009 12:58 & Charlie\_2009-12-01\_1258\_Sent.txt & -- \\
+    \hline
+    44 & Dec 01, 2009 13:02 & Charlie\_2009-12-01\_1302\_Sent.txt & Financial Motive \\
+    \hline
+    45 & Dec 01, 2009 13:43 & Charlie\_2009-12-01\_1343\_Received.txt & -- \\
+    \hline
+    \rowcolor{red!10}
+    46 & Dec 02, 2009 13:04 & Charlie\_2009-12-02\_1304\_Sent.txt & \textbf{CRITICAL: Trade Secret Offer} \\
+    \hline
+    \rowcolor{red!10}
+    47 & Dec 02, 2009 13:05 & Charlie\_2009-12-02\_1305\_Received.txt & \textbf{CRITICAL: Bounce-back Evidence} \\
+    \hline
+    48 & Dec 02, 2009 13:25 & Charlie\_2009-12-02\_1325\_Sent.txt & Second Contact Attempt \\
+    \hline
+    49 & Dec 02, 2009 13:52 & Charlie\_2009-12-02\_1352\_Received.txt & -- \\
+    \hline
+    50 & Dec 02, 2009 16:31 & Charlie\_2009-12-02\_1631\_Received.txt & -- \\
+    \hline
+    51 & Dec 03, 2009 08:51 & Charlie\_2009-12-03\_0851\_Received.txt & -- \\
+    \hline
+    52 & Dec 03, 2009 08:52 & Charlie\_2009-12-03\_0852\_Sent.txt & -- \\
+    \hline
+    53 & Dec 03, 2009 09:51 & Charlie\_2009-12-03\_0951\_Received.txt & -- \\
+    \hline
+    54 & Dec 03, 2009 12:16 & Charlie\_2009-12-03\_1216\_Sent.txt & File to competitor \\
+    \hline
+    55 & Dec 03, 2009 13:02 & Charlie\_2009-12-03\_1302\_Sent.txt & Mediterranean Cruise \\
+    \hline
+    56 & Dec 03, 2009 13:16 & Charlie\_2009-12-03\_1316\_Sent.txt & -- \\
+    \hline
+    57 & Dec 03, 2009 13:58 & Charlie\_2009-12-03\_1358\_Received.txt & -- \\
+    \hline
+    58 & Dec 04, 2009 08:48 & Charlie\_2009-12-04\_0848\_Sent.txt & -- \\
+    \hline
+    59 & Dec 04, 2009 09:22 & Charlie\_2009-12-04\_0922\_Received.txt & -- \\
+    \hline
+    \rowcolor{red!10}
+    60 & Dec 04, 2009 09:41 & Charlie\_2009-12-04\_0941\_Sent.txt & \textbf{CRITICAL: Extortion Email} \\
+    \hline
+    \rowcolor{red!10}
+    61 & Dec 04, 2009 13:06 & Charlie\_2009-12-04\_1306\_Sent.txt & \textbf{CRITICAL: Password Instructions} \\
+    \hline
+    62 & Dec 07, 2009 11:42 & other/Charlie\_2009-12-07\_1142\_Sent.txt & QC Project Report \\
+    \hline
+    \rowcolor{red!10}
+    63 & Dec 07, 2009 11:44 & other/Charlie\_2009-12-07\_1144\_Sent.txt & \textbf{CRITICAL: Steganography Image} \\
+    \hline
+    64 & Dec 07, 2009 12:55 & other/Charlie\_2009-12-07\_1255\_Sent.txt & Great Lunch \\
+    \hline
+    65 & Dec 08, 2009 12:59 & other/Charlie\_2009-12-08\_1259\_Sent.txt & Vacation Time \\
+    \hline
+    66 & Dec 08, 2009 14:18 & other/Charlie\_2009-12-08\_1418\_Sent.txt & Hey (Ferrari/Shelby) \\
+    \hline
+    67 & Dec 10, 2009 14:18 & other/Charlie\_2009-12-10\_1418\_Sent.txt & When's It Coming \\
+    \hline
+
+\caption{Complete Email Communications List}
+\end{longtable}
+
+\subsubsection{B.2 Attachment Files}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{5cm}|p{2cm}|p{4cm}|p{2.5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{File Name}} & \textcolor{white}{\textbf{Size}} & \textcolor{white}{\textbf{MD5 Hash}} & \textcolor{white}{\textbf{Category}} \\
+    \hline
+    Charlie\_2009-12-04\_0941\_Sent\_01.zip & 108,438 B & 4fa239c22e5fb7b934a1bf68e4e0e2e7 & \textcolor{red}{Evidence} \\
+    \hline
+    Charlie\_Email.zip & 1,833,535 B & 7a5e333b8fb8ed7f38db95d6b08d4585 & Email Backup \\
+    \hline
+    microscope1.jpg & 136,274 B & 4be2c4abb48c4389ca798e6c21736ea1 & \textcolor{red}{Steganography} \\
+    \hline
+    astronaut1.jpg & -- & -- & Sent to competitor \\
+    \hline
+    95253.SCSI.Mathew+Malizia.pdf & -- & 22f728e4c307c604f806dfc70bf12931 & Work file \\
+    \hline
+    97315.ScatterGatherIO.Julio+Molock.pdf & -- & 4c8cb6c9d8f0670d2c5127f30bfff6c9 & Work file \\
+    \hline
+    98521.WANs.Greg+Hillier.pdf & -- & 3daefc16b545c020b809939684b87a9f & Work file \\
+    \hline
+    99202.ComplexityTheory.Louisa+Fleet.pdf & -- & 409344fa2d71fdd651ccb4eaa0f2ce2d & Work file \\
+    \hline
+    PETEFFS.pdf & -- & 1cb74f2c1f8a8a801e0c91049244e82f & Work file \\
+    \hline
+    US5041044.pdf & -- & 9aabd3906236410aa524bf73c41e4593 & Patent Document \\
+    \hline
+\end{tabular}
+\caption{Attachment Files Inventory}
+\end{table}
+
+\subsubsection{B.3 Exfiltrated Files (Immortality Folder)}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{2cm}|p{4cm}|p{3.5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{File Name}} & \textcolor{white}{\textbf{Size}} & \textcolor{white}{\textbf{MD5 Hash}} & \textcolor{white}{\textbf{Last Modified}} \\
+    \hline
+    Immortality/ & 0 bytes & N/A & Nov 24, 2009 13:18 \\
+    \hline
+    Thumbs.db & 7,680 B & 4db32968b696e7b7dca8e3860e52b6c3 & Nov 24, 2009 13:18 \\
+    \hline
+    us005026637-001.tif & 39,692 B & b526e6c7a244d62e7120f3f804d76d8d & Nov 24, 2009 13:13 \\
+    \hline
+    us006982168-001.tif & 76,596 B & c412dfcd8bca1333d9356d710dd7a01a & Nov 24, 2009 13:15 \\
+    \hline
+\end{tabular}
+\caption{Exfiltrated Immortality Project Files}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE C - RAW EMAIL EVIDENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure C: Raw Email Evidence}
+
+\subsubsection{C.1 Extortion Email (Complete)}
+
+\begin{lstlisting}[caption={Charlie\_2009-12-04\_0941\_Sent.txt - Full Content}]
+Subject: I Found Something
+From: Charlie <charlie@m57.biz>
+To: andy@swexpert.com
+Date: Fri, 04 Dec 2009 09:41:47 -0800
+Message-ID: <4B1905FB.1050600@m57.biz>
+User-Agent: Thunderbird 2.0.0.23 (Windows/20090812)
+MIME-Version: 1.0
+Content-Type: multipart/mixed
+
+Andy,
+
+Lucky for me, I just happened to stumble across this. I found 
+a prior patent that will definitely invalidate your current 
+immortality patent. You should have used my boss's prior art 
+services, but, oh well, I'll just use your negligence to 
+benefit me. I want 100k or I'll release this publicly. I 
+don't need to tell you how much this will hurt your business 
+if I go public with this. Don't involve the cops or this 
+information will go public. See the attachment for details 
+on what I found. I'll be in touch with my bank acct number. 
+The password for the zip file will be hidden in the next 
+picture I send you.
+
+C
+
+[Attachment: 01.zip - password protected]
+\end{lstlisting}
+
+\subsubsection{C.2 Trade Secret Offer Email (from Bounce-back)}
+
+\begin{lstlisting}[caption={Charlie\_2009-12-02\_1305\_Received.txt - Original Message Content}]
+Subject: Interested?
+From: Charlie <charlie@m57.biz>
+To: jaime@project2400.com
+Date: Wed, 02 Dec 2009 13:04:29 -0800
+Message-ID: <4B16D65D.4060604@m57.biz>
+
+J,
+
+I have something that you'll definitely be interested in. 
+It concerns your competitor. I'm doing a prior art search 
+for them. Want to know what I've found? You know my price. 
+I'll send you the goods after I see half in my account. 
+Make sure you delete this email.
+
+C
+\end{lstlisting}
+
+\subsubsection{C.3 Password and Steganography Instructions}
+
+\begin{lstlisting}[caption={Charlie\_2009-12-04\_1306\_Sent.txt - Full Content}]
+Subject: Instructions
+From: Charlie <charlie@m57.biz>
+To: jamie@project2400.com
+Date: Fri, 04 Dec 2009 13:06:23 -0800
+Message-ID: <4B193AAF.9060006@m57.biz>
+
+J,
+
+Got the deposit. The password to get the info is nitro. 
+Use the steg program we talked about. And don't forget 
+to delete these emails.
+
+C
+\end{lstlisting}
+
+\subsubsection{C.4 Steganography Image Delivery}
+
+\begin{lstlisting}[caption={other/Picture.eml.txt (Charlie\_2009-12-07\_1144\_Sent.txt)}]
+Subject: Picture
+From: Charlie <charlie@m57.biz>
+To: andy@swexpert.com
+Date: Mon, 07 Dec 2009 11:44:18 -0800
+
+Andy,
+
+Here's the picture I promised... Make sure you delete this.
+
+C
+
+[Attachment: microscope1.jpg - MD5: 4be2c4abb48c4389ca798e6c21736ea1]
+\end{lstlisting}
+
+\subsubsection{C.5 Financial Motivation Evidence}
+
+\begin{lstlisting}[caption={other/Hey.txt (Charlie\_2009-12-08\_1418\_Sent.txt)}]
+Subject: Hey
+From: Charlie <charlie@m57.biz>
+To: rubinfritz31@mail.com
+Date: Tue, 08 Dec 2009 14:18:xx -0800
+
+You want to come test drive some cars with me later? 
+I'm going to the Ferrari dealer first, but I think 
+I'm going with the Shelby.
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Additional Email Content}]
+\textbf{Add Complete Content:} Include full text of the following emails if needed:
+\begin{itemize}
+    \item Charlie\_2009-12-01\_1302\_Sent.txt (Vacation/hot car message)
+    \item other/Vacation time.txt (2-week vacation request)
+    \item other/When's it coming.txt (Car delivery confirmation)
+\end{itemize}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE D - HASH VERIFICATION RECORDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure D: Hash Verification Records}
+
+\subsubsection{D.1 Critical Evidence Files - Hash Registry}
+
+\begin{longtable}{|p{4.5cm}|p{4cm}|p{5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{File}} & \textcolor{white}{\textbf{MD5 Hash}} & \textcolor{white}{\textbf{SHA1 Hash}} \\
+    \hline
+    \endhead
+    
+    \multicolumn{3}{|c|}{\cellcolor{gray!20}\textbf{Primary Evidence Files}} \\
+    \hline
+    Charlie\_...\_01.zip & 4fa239c22e5fb7b934a1bf68e4e0e2e7 & cd73525ab73c19d01d9de0ea18bf9a6f932cef3e \\
+    \hline
+    microscope1.jpg & 4be2c4abb48c4389ca798e6c21736ea1 & 9aff30f601c1122ed63834ccc783901f79bad716 \\
+    \hline
+    Charlie\_Email.zip & 7a5e333b8fb8ed7f38db95d6b08d4585 & -- \\
+    \hline
+    
+    \multicolumn{3}{|c|}{\cellcolor{gray!20}\textbf{Exfiltrated Data Files}} \\
+    \hline
+    us005026637-001.tif & b526e6c7a244d62e7120f3f804d76d8d & 386ff415604c2a3aea768d8ed33ed5c9d74cf67d \\
+    \hline
+    us006982168-001.tif & c412dfcd8bca1333d9356d710dd7a01a & da19bd1061dd6dc0e96c1a28e16e6378e1332b3f \\
+    \hline
+    Thumbs.db & 4db32968b696e7b7dca8e3860e52b6c3 & 380b219eccbab59e89233e0ae3c30e142ebe429a \\
+    \hline
+    
+    \multicolumn{3}{|c|}{\cellcolor{gray!20}\textbf{Work/Reference Files}} \\
+    \hline
+    95253.SCSI...pdf & 22f728e4c307c604f806dfc70bf12931 & fcd000a06a885c18e933dd4a9457d886f41bd403 \\
+    \hline
+    97315.ScatterGatherIO...pdf & 4c8cb6c9d8f0670d2c5127f30bfff6c9 & e340ad755e86dc2c4cc95250dec16fc6dd2734db \\
+    \hline
+    98521.WANs...pdf & 3daefc16b545c020b809939684b87a9f & e96efeaa874def987c8807287417d6c885e11deb \\
+    \hline
+    99202.ComplexityTheory...pdf & 409344fa2d71fdd651ccb4eaa0f2ce2d & c43f3ecc14879014b42e4e3ef85fe276efca7c65 \\
+    \hline
+    PETEFFS.pdf & 1cb74f2c1f8a8a801e0c91049244e82f & 91f3a62036c87983d528ecd869ce39e4b8c2dd7a \\
+    \hline
+    US5041044.pdf & 9aabd3906236410aa524bf73c41e4593 & 31f90827b4d210de673e2fbefbf23b11794a9066 \\
+    \hline
+
+\caption{Complete Hash Verification Registry}
+\end{longtable}
+
+\subsubsection{D.2 Hash Verification Commands}
+
+\begin{lstlisting}[caption={Hash Verification Command Output}]
+# MD5 Hash Verification
+$ md5sum Charlie_2009-12-04_0941_Sent_01.zip
+4fa239c22e5fb7b934a1bf68e4e0e2e7  Charlie_2009-12-04_0941_Sent_01.zip
+
+# SHA1 Hash Verification
+$ sha1sum Charlie_2009-12-04_0941_Sent_01.zip
+cd73525ab73c19d01d9de0ea18bf9a6f932cef3e  Charlie_2009-12-04_0941_Sent_01.zip
+
+# SHA256 Hash Verification (if required)
+$ sha256sum Charlie_2009-12-04_0941_Sent_01.zip
+[Hash Value]  Charlie_2009-12-04_0941_Sent_01.zip
+\end{lstlisting}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Hash Verification Screenshots}]
+\textbf{Add Screenshots:}
+\begin{itemize}
+    \item Autopsy hash verification results
+    \item Command line hash verification output
+    \item Any additional hash verification tool outputs
+\end{itemize}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE E - CHAIN OF CUSTODY DOCUMENTATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure E: Chain of Custody Documentation}
+
+\subsubsection{E.1 Evidence Handling Log}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2.5cm}|p{3.5cm}|p{3cm}|p{2cm}|p{2.5cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Date/Time}} & \textcolor{white}{\textbf{Action}} & \textcolor{white}{\textbf{Handler}} & \textcolor{white}{\textbf{Location}} & \textcolor{white}{\textbf{Notes}} \\
+    \hline
+    Dec 22, 2025 06:40 & Forensic acquisition initiated & Rana Uzair & Lab & Case created \\
+    \hline
+    Dec 22, 2025 06:41 & Image mounted read-only & Rana Uzair & Lab & Verification OK \\
+    \hline
+    Dec 22, 2025 06:42 & Ingest modules completed & Rana Uzair & Lab & All modules run \\
+    \hline
+    Dec 22, 2025 06:42 & Evidence export generated & Rana Uzair & Lab & Multiple formats \\
+    \hline
+    Dec 22, 2025 & Analysis completed & Rana Uzair & Lab & Report drafted \\
+    \hline
+\end{tabular}
+\caption{Evidence Handling Log}
+\end{table}
+
+\subsubsection{E.2 Chain of Custody Form}
+
+\begin{tcolorbox}[colback=blue!5, colframe=headerblue, title=\textbf{CHAIN OF CUSTODY FORM}]
+
+\textbf{Case Number:} DF-231309 \\
+\textbf{Evidence Description:} Forensic Image (evidence.E01) - Employee Workstation \\
+\textbf{Original Source:} M57.biz Employee Computer \\
+
+\vspace{0.5cm}
+
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
+    \hline
+    \textbf{Released By} & \textbf{Received By} & \textbf{Date/Time} & \textbf{Purpose} \\
+    \hline
+    \rule{2.5cm}{0.4pt} & Rana Uzair & Dec 22, 2025 & Forensic Analysis \\
+    \hline
+    Rana Uzair & \rule{2.5cm}{0.4pt} & \rule{2.5cm}{0.4pt} & \rule{2.5cm}{0.4pt} \\
+    \hline
+    \rule{2.5cm}{0.4pt} & \rule{2.5cm}{0.4pt} & \rule{2.5cm}{0.4pt} & \rule{2.5cm}{0.4pt} \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Storage Location:} Secure Evidence Locker / Digital Storage \\
+\textbf{Access Restrictions:} Authorized Personnel Only
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Original Chain of Custody}]
+\textbf{Add Information:}
+\begin{itemize}
+    \item Original acquisition details from M57.biz
+    \item Original investigator who acquired the evidence.E01 image
+    \item Storage history prior to current analysis
+    \item Any transfer records between parties
+\end{itemize}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE F - EMAIL HEADER ANALYSIS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure F: Email Header Analysis}
+
+\subsubsection{F.1 Sample Email Header (Bounce-back Email)}
+
+\begin{lstlisting}[caption={Email Header Analysis - Charlie\_2009-12-02\_1305\_Received\_Interested-.eml}]
+X-ASG-Debug-ID: 1259787905-6f178ea50001-ViaRji
+Received: from domex (domex.nps.edu [205.155.65.103])
+    by mustang.nps.edu with ESMTP id RkloEmAYo22C1XPU
+    for <jaime@project2400.com>; Wed, 02 Dec 2009 13:05:05 -0800 (PST)
+X-Barracuda-Envelope-From: charlie@m57.biz
+Received: from [192.168.1.104] (unknown [192.168.1.104])
+    by domex (Postfix) with ESMTP id 9AB35543CBE
+    for <jaime@project2400.com>; Wed, 02 Dec 2009 13:04:30 -0800 (PST)
+Message-ID: <4B16D65D.4060604@m57.biz>
+Date: Wed, 02 Dec 2009 13:04:29 -0800
+From: Charlie <charlie@m57.biz>
+User-Agent: Thunderbird 2.0.0.23 (Windows/20090812)
+MIME-Version: 1.0
+To: jaime@project2400.com
+Subject: Interested?
+X-Barracuda-Connect: UNKNOWN[192.168.1.104]
+X-Barracuda-Start-Time: 1259787870
+X-Barracuda-URL: http://192.168.1.2:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by amavisd-new at nps.edu
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00
+X-Barracuda-Spam-Report: Code version 3.2
+\end{lstlisting}
+
+\subsubsection{F.2 Header Analysis Summary}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Header Field}} & \textcolor{white}{\textbf{Value}} & \textcolor{white}{\textbf{Significance}} \\
+    \hline
+    From & charlie@m57.biz & Sender identity \\
+    \hline
+    Originating IP & 192.168.1.104 & Internal M57.biz network \\
+    \hline
+    Mail Server & domex.nps.edu (205.155.65.103) & Relay server \\
+    \hline
+    User-Agent & Thunderbird 2.0.0.23 (Windows) & Client application \\
+    \hline
+    Message-ID & 4B16D65D.4060604@m57.biz & Unique identifier \\
+    \hline
+    Spam Status & No (SCORE=0.00) & Clean email \\
+    \hline
+    Virus Scan & amavisd-new & Scanned clean \\
+    \hline
+\end{tabular}
+\caption{Email Header Analysis Summary}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE G - GLOSSARY OF FORENSIC TERMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure G: Glossary of Forensic Terms}
+
+\begin{longtable}{|p{4cm}|p{10cm}|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Term}} & \textcolor{white}{\textbf{Definition}} \\
+    \hline
+    \endhead
+    
+    \textbf{Chain of Custody} & The chronological documentation showing the seizure, custody, control, transfer, analysis, and disposition of evidence. \\
+    \hline
+    \textbf{Digital Forensics} & The process of uncovering and interpreting electronic data for use as evidence in legal proceedings. \\
+    \hline
+    \textbf{E01 (EnCase Format)} & A proprietary file format used to store forensic images, including metadata and hash verification. \\
+    \hline
+    \textbf{Exfiltration} & The unauthorized transfer of data from a computer or network, typically to an external destination. \\
+    \hline
+    \textbf{Forensic Image} & A bit-by-bit copy of a storage device that preserves all data including deleted files and slack space. \\
+    \hline
+    \textbf{Hash Value} & A fixed-size numerical value computed from data to verify integrity (e.g., MD5, SHA1, SHA256). \\
+    \hline
+    \textbf{Ingest Module} & An Autopsy component that processes evidence to extract specific artifact types. \\
+    \hline
+    \textbf{MAC Times} & Modified, Accessed, and Created timestamps stored in file system metadata. \\
+    \hline
+    \textbf{MD5} & Message Digest Algorithm 5 - a 128-bit hash function commonly used for file verification. \\
+    \hline
+    \textbf{NTFS} & New Technology File System - Microsoft's proprietary file system used in Windows. \\
+    \hline
+    \textbf{Prior Art} & Existing evidence that an invention is already known, relevant to patent validity. \\
+    \hline
+    \textbf{SHA1} & Secure Hash Algorithm 1 - a 160-bit hash function used for data integrity verification. \\
+    \hline
+    \textbf{Slack Space} & Unused space in a file allocation unit that may contain residual data from deleted files. \\
+    \hline
+    \textbf{Steganography} & The practice of concealing a message within another message or physical object (e.g., hiding data in images). \\
+    \hline
+    \textbf{Thumbs.db} & A Windows system file that caches thumbnail images of files in a directory. \\
+    \hline
+    \textbf{Timeline Analysis} & The process of correlating timestamps from various sources to reconstruct events. \\
+    \hline
+    \textbf{Trade Secret} & Confidential business information that provides competitive advantage. \\
+    \hline
+
+\caption{Glossary of Forensic Terms}
+\end{longtable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE H - ADDITIONAL SUPPORTING DOCUMENTATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure H: Additional Supporting Documentation}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Additional Documentation}]
+\textbf{Add the following items as needed:}
+
+\begin{enumerate}
+    \item \textbf{Autopsy Case Export Reports:}
+    \begin{itemize}
+        \item HTML Report (DF HTML Report 12-22-2025-06-40-43)
+        \item Excel Report (DF Excel Report 12-22-2025-06-42-34)
+        \item Text Report (DF Files - Text 12-22-2025-06-42-18)
+    \end{itemize}
+    
+    \item \textbf{Steganography Analysis Results:}
+    \begin{itemize}
+        \item Output from steganography detection tools
+        \item Extracted hidden data from microscope1.jpg
+        \item Tool screenshots showing analysis process
+    \end{itemize}
+    
+    \item \textbf{ZIP Password Recovery Documentation:}
+    \begin{itemize}
+        \item Password recovery tool output (if dictionary/brute-force was used)
+        \item Verification of password ``nitro'' working
+    \end{itemize}
+    
+    \item \textbf{Network Analysis (if applicable):}
+    \begin{itemize}
+        \item Firewall logs showing external communications
+        \item Proxy server logs
+        \item Network traffic captures
+    \end{itemize}
+    
+    \item \textbf{Witness Statements:}
+    \begin{itemize}
+        \item Statement from Pat McGoo (CEO)
+        \item Statement from IT Administrator
+        \item Any other relevant witness statements
+    \end{itemize}
+    
+    \item \textbf{Legal Documentation:}
+    \begin{itemize}
+        \item Search warrant or authorization for examination
+        \item Consent forms
+        \item Non-disclosure agreements
+    \end{itemize}
+\end{enumerate}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ANNEXURE I - FORENSIC EXAMINATION ENVIRONMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Annexure I: Forensic Examination Environment}
+
+\subsubsection{I.1 Hardware and Software Used}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+    \hline
+    \rowcolor{headerblue}
+    \textcolor{white}{\textbf{Component}} & \textcolor{white}{\textbf{Specification}} \\
+    \hline
+    \multicolumn{2}{|c|}{\cellcolor{gray!20}\textbf{Forensic Workstation}} \\
+    \hline
+    Operating System & Windows 10/11 Professional \\
+    \hline
+    Processor & Intel Core i7 or equivalent \\
+    \hline
+    RAM & 16GB minimum \\
+    \hline
+    Storage & SSD with sufficient space for evidence \\
+    \hline
+    \multicolumn{2}{|c|}{\cellcolor{gray!20}\textbf{Primary Forensic Software}} \\
+    \hline
+    Autopsy & Version 4.21.0 \\
+    \hline
+    The Sleuth Kit (TSK) & Integrated with Autopsy \\
+    \hline
+    PhotoRec & Version 7.0 (file carving) \\
+    \hline
+    \multicolumn{2}{|c|}{\cellcolor{gray!20}\textbf{Supporting Tools}} \\
+    \hline
+    Archive Utility & unzip (command line) \\
+    \hline
+    Hash Verification & md5sum, sha1sum \\
+    \hline
+    Text Analysis & Standard text editors \\
+    \hline
+\end{tabular}
+\caption{Forensic Examination Environment}
+\end{table}
+
+\begin{tcolorbox}[colback=yellow!10, colframe=orange!50!black, title=\textbf{PLACEHOLDER: Tool Versions and Settings}]
+\textbf{Add Specific Details:}
+\begin{itemize}
+    \item Exact version numbers of all tools used
+    \item Configuration settings for Autopsy ingest modules
+    \item Any custom keyword lists used
+    \item Screenshots of tool ``About'' dialogs showing versions
+\end{itemize}
+\end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END OF ANNEXURES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{1cm}
+
+\begin{center}
+\rule{10cm}{0.5pt} \\
+\textbf{END OF ANNEXURES}
+\end{center}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FINAL CERTIFICATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \vspace{1cm}
 
 \begin{center}
